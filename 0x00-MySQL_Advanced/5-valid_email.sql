@@ -6,9 +6,9 @@ BEFORE UPDATE ON users
 FOR EACH ROW
 BEGIN
     IF OLD.email != NEW.email THEN
-        SET NEW.valid_email = 1;
+        SET NEW.valid_email = 1
     ELSE
-	SET NEW.valid_email = NEW.valid_email;
+	SET NEW.valid_email = NEW.valid_email
     END IF;
 END ^^
 DELIMITER ;
