@@ -1,6 +1,6 @@
 -- SQL script that creates a trigger that resets the attribute
 DROP TRIGGER IF EXISTS reset;
-DELIMITER ^^
+DELIMITER $$
 CREATE TRIGGER reset
 BEFORE UPDATE ON users
 FOR EACH ROW
@@ -10,5 +10,6 @@ BEGIN
     ELSE
 	SET NEW.valid_email = NEW.valid_email
     END IF
-END ^^
+END
+$$
 DELIMITER ;
