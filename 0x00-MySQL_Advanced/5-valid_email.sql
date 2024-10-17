@@ -1,4 +1,4 @@
--- SQL script that creates a trigger that resets the attribute
+--SQL script that creates a trigger that resets the attribute
 DROP TRIGGER IF EXISTS reset;
 DELIMITER $$
 CREATE TRIGGER reset
