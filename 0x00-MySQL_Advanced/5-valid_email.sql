@@ -9,6 +9,6 @@ BEGIN
         SET NEW.valid_email = 1
     ELSE
 	SET NEW.valid_email = NEW.valid_email
-    END IF;
+    END IF
 END ^^
 DELIMITER ;
