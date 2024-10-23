@@ -10,7 +10,7 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    def store(self, data):
+    def store(self, data: any):
         '''method that takes a data argument and returns a string'''
         self.data = data
         key = str(uuid.uuid4())
