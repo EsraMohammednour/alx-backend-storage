@@ -18,17 +18,17 @@ class Cache:
         self._redis.set(key, data)
         return key
 
-    def get(self, key: str, fn: callable = None):
+    def get(self, key: str, fn: callable = None) -> Union[str, bytes, int, float]:
         '''get function that take str value'''
         value = self.data.get(key)
         if value is not None and fn is not None:
             return fn(value)
         return value
 
-    def get_str(self, key: str):
+    def get_str(self, key: str) -> str:
         '''function that return str value'''
-        return self.get(key, str)
+        return self.get(key, lambda x: x.decode('utf-8'))
 
-    def get_int(self, key: str):
+    def get_int(self, key: str) -> int:
         '''function that return int value'''
-        return self.get(key, int)
+        return self.get(key, lambda x; int(x))
