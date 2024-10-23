@@ -9,7 +9,7 @@ class Cache:
     def __init__(self):
         self._redis = redis.Redis()
         self._redis.flushdb()
-
+        self.data = None
     def store(self, data: any):
         '''method that takes a data argument and returns a string'''
         key = str(uuid.uuid4())
