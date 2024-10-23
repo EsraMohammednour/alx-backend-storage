@@ -11,6 +11,7 @@ class Cache:
 
 
     def store(self, data):
+        '''method that takes a data argument and returns a string'''
         self.data = data
         key = str(uuid.uuid4())
         self._redis.set(key, data)
